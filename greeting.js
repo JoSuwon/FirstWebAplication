@@ -34,10 +34,26 @@ function formSubmit(e) {
 
 function paintGreeting(inputValue) {
     greetingForm.classList.remove(SHOWING_CN);
-    greetings.innerHTML = `안녕하세요. ${inputValue}님`;
+    greetings.innerHTML = `안녕하세요. ${inputValue}님 `;
     greetings.classList.add(SHOWING_CN);
+    const tagI = document.createElement("i");
+    tagI.classList.add("fa");
+    tagI.classList.add("fa-refresh");
+    tagI.classList.add("fa-spin");
+    tagI.classList.add("fa-3x");
+    tagI.addEventListener("click", refreshName);
+    const delBtn = document.createElement("button");
+    delBtn.appendChild(tagI);
+    greetings.appendChild(delBtn);
 }
 
 function saveNameAtLocalStorage(inputValue) {
     localStorage.setItem(USER_LS, inputValue);
+}
+
+function refreshName(e) {
+    localStorage.removeItem(USER_LS);
+    greetingInput.value = "";
+    greetingForm.classList.add(SHOWING_CN);
+    greetings.classList.remove(SHOWING_CN);
 }
