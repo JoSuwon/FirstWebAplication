@@ -115,3 +115,17 @@ button {
     z-index:-1;
     animation: fadeIn 0.5s linear;
 }
+
+.js-weather {
+    position: absolute;
+    left: 50px;
+    top: 14px;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.js-weatherImg {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
