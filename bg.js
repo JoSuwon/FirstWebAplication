@@ -14,8 +14,11 @@ function getRandom() {
 }
 
 function paintImage(imgNumber) {
+    const div = document.createElement("div");
+    div.classList.add("bgContainer");
     const image = new Image();
     image.src = `images/${imgNumber}.jpg`;
     image.classList.add("bgImage");
-    body.appendChild(image);
+    div.appendChild(image);
+    body.appendChild(div);
 }

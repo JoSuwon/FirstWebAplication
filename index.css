@@ -8,6 +8,7 @@ body {
     font-family: NeoDunggeunmo;
     background-color: #34495e;
     color: #ecf0f1;
+    margin: 0 0;
 }
 
 h1 {
@@ -34,15 +35,14 @@ input::placeholder {
 }
 
 ul {
-    margin: 0 0;
-    margin-left: 40%;
-    margin-right: 40%;
+    padding-left: 0px;
+    margin: 0 auto;
     list-style: none;
-    width: 300px;
+    width: 400px;
 }
 
 li {
-    margin: 3px 0;
+    margin: 3px auto;
     text-align: left;
     opacity: 0.9;
 }
@@ -106,14 +106,22 @@ button {
     }
 }
 
-.bgImage {
+.bgContainer {
     position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:-1;
-    animation: fadeIn 0.5s linear;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bgImage {
+    z-index: -1;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .js-weather {
